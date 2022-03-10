@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <meta name="copyright" content="MACode ID, https://macodeid.com">
+
+  <title>Hackathon</title>
+
+  <link rel="stylesheet" href="../static/vendor/animate/animate.css">
+
+  <link rel="stylesheet" href="../static/css/bootstrap.css">
+
+  <link rel="stylesheet" href="../static/css/maicons.css">
+
+  <link rel="stylesheet" href="../static/css/theme.css">
+
+  <link rel="stylesheet" href="../static/css/work.css">
+
+</head>
+
+<body>
+
+  <!-- Back to top button -->
+  <div class="back-to-top"></div>
+
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-light navbar-fl">
+      <div class="container">
+        <a href="index.html" class="navbar-brand">BE<span class="text-primary">RT</span></a>
+
+        <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarContent" aria-controls="navbarContent"
+          aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="navbar-collapse collapse" id="navbarContent">
+          <ul class="navbar-nav ml-lg-4 pt-3 pt-lg-0">
+            <li class="nav-item active">
+              <a href="index.html" class="nav-link">Home</a>
+            </li>
+            <!-- <li class="nav-item">
+              <a href="services.html" class="nav-link">Services</a>
+            </li> 
+             <li class="nav-item">
+              <a href="blog.html" class="nav-link">News</a>
+            </li> -->
+            <li class="nav-item">
+              <a href="contact.html" class="nav-link">Contact</a>
+            </li>
+            <li class="nav-item">
+              <a href="about.html" class="nav-link">About</a>
+            </li>
+          </ul>
+
+          <div class="ml-auto">
+            <a href="{{ url_for('login') }}" class="btn btn-outline rounded-pill">Login</a>
+          </div>
+          <div class="ml-auto">
+            <a href="{{ url_for('register') }}" class="btn btn-outline rounded-pill">Sign Up</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <div class="page-banner home-banner">
+      <div class="container h-100">
+        <div class="row align-items-center h-100">
+          <div class="col-lg-6 py-3 wow fadeInUp">
+            <h1 class="mb-4">Identify important ideas and facts with BERT</h1>
+            <p class="text-lg mb-5">BERT summarizer can condense articles, papers, or documents down to the key points
+              instantly. Our AI uses natural language processing to locate critical information while maintaining the
+              original context.</p>
+
+            <!-- <a href="#" class="btn btn-outline border text-secondary">More Info</a> -->
+            <a href="{{ url_for('input') }}" target="_blank" class="btn btn-primary btn-split ml-2">Get Started! <div
+                class="fab">
+                <span class="mai-play"></span>
+              </div></a>
+          </div>
+          <div class="col-lg-6 py-3 wow zoomIn">
+            <div class="img-place">
+              <img src="../static/images/undraw_summary.svg" alt="">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- <div class="text-center wow fadeInUp">
+      <div class="d1">
+        <div class="d2">
+            <div class="d3">
+                <div class="col-sm"><p class="text-xl" style="padding-top: 8px;"><b>TEXT</b></p></div>
+                <div class="col-sm"><p class="text-xl" style="padding-top: 8px;"><b>SUMMARY</b></p></div>
+            </div>
+            <div class="d6">
+                <textarea class="col-sm"></textarea>
+                <textarea class="col-sm"></textarea>
+            </div>
+            <div class="d3">
+                <div class="d7">
+                  <button class="btn btn-split">IMPORT<i style="margin-left:5px;" class="fas fa-file-import"></i></button>
+                  <button class="btn btn-split">PASTE<i style="margin-left:5px;" class="fas fa-paste"></i></button>
+                </div>
+                <div class="d8">
+                  <button class="btn btn-split" onclick="myFunction()">COPY<i style="margin-left:5px;" class="fas fa-copy" aria-hidden="true"></i></button>
+                    <button class="btn btn-split">EXPORT<i style="margin-left:5px;" class="fas fa-file-download"></i></button>
+                </div>
+            </div>
+            <div class="d9">
+                <input class="btn btn-outline" type="submit" value="Summarize">
+            </div>
+        </div>
+      </div>
+    </div>
+  
+    <div class="">
+      <form >
+        <label for="myfile">Select a file:</label>
+        <input type="file" id="myfile" name="myfile"><br><br>
+      </form>
+    </div> -->
+
+
+
+    <!-- <div class="page-section">
+      <div class="container">
+        <div class="text-center wow fadeInUp">
+          <div class="subhead">Why Choose Us</div>
+          <h2 class="title-section">Your <span class="marked">Comfort</span> is Our Priority</h2>
+          <div class="divider mx-auto"></div>
+        </div>
+
+        <div class="row mt-5 text-center">
+          <div class="col-lg-4 py-3 wow fadeInUp">
+            <div class="display-3"><span class="mai-shapes"></span></div>
+            <h5>High Performance</h5>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum, sit.</p>
+          </div>
+          <div class="col-lg-4 py-3 wow fadeInUp">
+            <div class="display-3"><span class="mai-shapes"></span></div>
+            <h5>Friendly Prices</h5>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum, sit.</p>
+          </div>
+          <div class="col-lg-4 py-3 wow fadeInUp">
+            <div class="display-3"><span class="mai-shapes"></span></div>
+            <h5>No time-confusing</h5>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum, sit.</p>
+          </div>
+        </div>-->
+
+
+
+    <footer class="page-footer">
+      <div class="container">
+        <div class="row justify-content-center mb-5">
+          <div class="col-lg-3 py-3">
+            <h3><span class="text-primary">Contact</span></h3>
+            <p> Reach out to us! <br></p>
+
+            <p><a href="#">theremainingsword@gmail.com</a></p>
+          </div>
+          <div class="col-lg-3 py-3">
+            <h5>About</h5>
+            <ul class="footer-menu">
+              <li><a href="#">How it works</a></li>
+              <!-- <li><a href="#">Security</a></li> -->
+              <!-- <li><a href="#">Pricing</a></li> -->
+            </ul>
+          </div>
+          <!-- <div >
+             <h5>About Us</h5>
+          <ul class="footer-menu">
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Jobs</a></li>
+            <li><a href="#">Our Teams</a></li>
+            <li><a href="#">Testimonials</a></li>
+            <li><a href="#">News & Press</a></li>
+          </ul>
+        </div> -->
+
+        </div> <!-- .container -->
+    </footer> <!-- .page-footer -->
+
+
+    <script src="../static/jquery-3.5.1.min.js"></script>
+
+    <script src="https://kit.fontawesome.com/f4a0013b18.js" crossorigin="anonymous"></script>
+
+    <script src="../static/bootstrap.bundle.min.js"></script>
+
+    <script src="../static/vendor/wow/wow.min.js"></script>
+
+    <script src="../static/vendor/waypoints/jquery.waypoints.min.js"></script>
+
+    <script src="../static/theme.js"></script>
+
+    <script>
+      function myFunction() {
+        /* Get the text field */
+        var copyText = document.getElementById("myInput");
+
+        /* Select the text field */
+        copyText.select();
+        copyText.setSelectionRange(0, 99999); /* For mobile devices */
+
+        /* Copy the text inside the text field */
+        navigator.clipboard.writeText(copyText.value);
+
+        /* Alert the copied text */
+        alert("Copied the text: " + copyText.value);
+      }
+    </script>
+
+
+
+</body>
+
+</html>

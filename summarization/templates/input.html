@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="../static/vendor/animate/animate.css">
+
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;600;700&display=swap");
+
+        * {
+            box-sizing: border-box;
+            margin: 0px;
+            padding: 0px;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+
+        .d1 {
+
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: white;
+            background-image: url(../static/images/subtle-prism.svg);
+        }
+
+        .d2 {
+            width: 40%;
+            height: 80%;
+            background-color: white;
+            border-radius: 20px;
+            border: 2px solid #645F88;
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+            background-color: #ae82c2;
+        }
+
+        .d3 {
+            text-align: center;
+            height: 5%;
+            background-color: #ae82c2;
+        }
+
+        .d4 {
+            width: 100%;
+            height: 80%;
+        }
+
+        .txt1 {
+            width: 300px;
+            height: 300px;
+            resize: none;
+        }
+
+        /* .btn1{
+                width:33.33%;
+                border-radius:20px ;
+                outline: none;
+                color: #645F88;
+                margin: 3px;
+                background-color: white;
+                /* margin: 5px; */
+        /* } */
+        /* .btn2{
+                width:33.33%;
+                /* border-radius:20px; */
+        /* outline: none;
+                color: white;
+                margin: 3px;
+                margin-top: 15px;
+                margin: 5px; */
+
+        /* } */
+        .d5 {
+            display: flex;
+            justify-content: space-around;
+            height: 10%;
+            /* padding: 3px; */
+            /* border-bottom-left-radius: 20px; */
+        }
+
+        .summ {
+            width: 100%;
+            height: 100%;
+            border-radius: 20px;
+            color: #645F88;
+            margin: 3px;
+            background-color: white;
+            font-size: large
+        }
+
+        /* .d7{
+                display: flex;
+                height: 10%;
+                /* width:100%; */
+        /* text-align: center;
+                justify-content: center;
+            }  */
+    </style>
+</head>
+
+
+<body>
+    <div class="d1">
+        <div class="d2 py-3 wow fadeInUp">
+            <div class="d3">
+                <p style="margin-top: 25px; font-size: 20px; color: white;">TEXT</p>
+            </div>
+            <div class="d4">
+                <form method="POST" class="txt1" id="register-form" action="">
+                    {{ para.hidden_tag() }}
+                    <div class="d6">
+                        {% if para.paragraph.errors %}
+                        {{ para.paragraph(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in para.paragraph.errors %}
+                            <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                        {% else %}
+                        {{ para.paragraph }}
+                        {% endif %}
+                    </div>
+            </div>
+            <div class="d5">
+                <a href="{{ url_for('summarized_text') }}"><button class="summ" type="submit">SUMMARIZE</button></a>
+                <a href="{{ url_for('subsection') }}"><button class="summ" type="submit"> SUBSECTION </button></a>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://kit.fontawesome.com/f4a0013b18.js" crossorigin="anonymous"></script>
+
+    <!-- <script>
+        var x = document.getElementById("abc");
+        x.addEventListener("click", function(){
+            window.open("{{ url_for('summarized_text') }}","_blank");
+        })
+    </script> -->
+
+</body>
+
+</html>

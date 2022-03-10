@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Reset Password</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="../static/fonts/material-icon/css/material-design-iconic-font.min.css">
+    <link rel="stylesheet" href="../static/css/style.css">
+</head>
+<body>
+
+    <div class="main">
+        <section class="sign-in">
+            <div class="container">
+                <div class="signin-content">
+                    <!-- <div class="signin-image">
+                        <figure><img src="../static/images/signin-image.jpg" alt="sing up image"></figure>
+                        <a href="{{ url_for('home') }}" class="signup-image-link">Create an account</a>
+                    </div> -->
+
+                    <div class="signin-form">
+                        <h2 class="form-title">Reset Password</h2>
+                        <form method="POST" class="register-form" id="login-form">
+                            {{ form.hidden_tag() }}
+                            <div class="form-group">
+                                <label for="your_pass"><i class="zmdi zmdi-email"></i></label>
+                                {% if form.password.errors %}
+                                {{ form.password(class="form-control form-control-lg is-invalid") }}
+                                <div class="invalid-feedback">
+                                    {% for error in form.password.errors %}
+                                    <span>{{ error }}</span>
+                                    {% endfor %}
+                                </div>
+                                
+                                {% else %}
+                                {{ form.password }}
+                                {% endif %}
+                                <!-- <input type="text" name="your_name" id="your_name" placeholder="Your Name"/> -->
+                            </div>
+                            <div class="form-group">
+                                <label for="your_pass"><i class="zmdi zmdi-email"></i></label>
+                                {% if form.confirm_password.errors %}
+                                {{ form.confirm_password(class="form-control form-control-lg is-invalid") }}
+                                <div class="invalid-feedback">
+                                    {% for error in form.confirm_password.errors %}
+                                    <span>{{ error }}</span>
+                                    {% endfor %}
+                                </div>
+                                
+                                {% else %}
+                                {{ form.confirm_password }}
+                                {% endif %}
+                                <!-- <input type="text" name="your_name" id="your_name" placeholder="Your Name"/> -->
+                            </div>
+                            
+                            <div class="form-group form-button">
+                                <input type="submit" name="signin" id="signin" class="form-submit" value="Log in"/>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <script src="../static/vendor/jquery/jquery.min.js"></script>
+    <script src="../static/main.js"></script>
+</body>
